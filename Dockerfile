@@ -6,6 +6,8 @@ RUN mkdir -p $PUBLISH_DIR
 
 RUN apk add --update --no-cache curl gnupg gzip
 
+RUN gpg --receive-keys ED97E90E62AA7E34
+
 COPY download-iana-tzdata.sh /etc/periodic/daily/download-iana-tzdata.sh
 
 VOLUME /publish
