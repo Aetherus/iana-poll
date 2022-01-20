@@ -10,6 +10,7 @@ IANA Poll
 
 ## Docker 容器化部署
 
+    $ export PUBLISH_DIR=<tzdata.tar.gz 发布目录>
     $ docker-compose up -d
 
 ## 用法
