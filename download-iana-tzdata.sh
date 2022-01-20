@@ -12,7 +12,7 @@ download() {
   curl --silent --location -o "$tmp_asc_path" "$tmp_asc_url"
 
   if [ "$?" -ne "0" ]; then
-    echo "Failed to downloading tzdata-latest.tar.gz.asc"
+    echo -e "\e[31mFailed to downloading tzdata-latest.tar.gz.asc\e[0m" >&2
     return 1
   fi
 
@@ -20,7 +20,7 @@ download() {
   curl --silent --location -o "$tmp_tarball_path" "$tmp_tarball_url"
 
   if [ "$?" -ne "0" ]; then
-    echo "Failed to downloading tzdata-latest.tar.gz"
+    echo -e "\e[31mFailed to downloading tzdata-latest.tar.gz\e[0m" >&2
     return 1
   fi
 
@@ -28,7 +28,7 @@ download() {
   gpg --trusted-key="$trusted_gpg_key" --verify "$tmp_asc_path" "$tmp_tarball_path"
 
   if [ "$?" -ne "0" ]; then
-    echo "Invalid tzdata-latest.tar.gz"
+    echo -e "\e[31mtzdata-latest.tar.gz is corrupted.\e[0m" >&2
     return 1
   fi
 }
