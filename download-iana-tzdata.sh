@@ -39,7 +39,7 @@ publish() {
   echo "Publishing tzdata-latest.tar.gz ..."
   published_tarball_path="$publish_dir/tzdata-$version.tar.gz"
   cp "$tmp_tarball_path" "$published_tarball_path"
-  ln -sf "$published_tarball_path" "$publish_dir/tzdata-latest.tar.gz"
+  ln -f "$published_tarball_path" "$publish_dir/tzdata-latest.tar.gz"
   echo "Tzdata is successfully published."
 }
 
