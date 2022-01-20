@@ -61,17 +61,17 @@ server {
 
 修改后需重启服务。
 
-**3.1 非 Docker 部署**
+**4.1 非 Docker 部署**
 
 修改 /etc/hosts 文件，添加记录
 
     <能够访问 IANA 官网的主机的 IP>  data.iana.org
 
-**3.2 Docker 部署**
+**4.2 Docker 部署**
 
     $ docker run --add-host data.iana.org:<能够访问 IANA 官网的主机的 IP> ...
 
-**3.3 Docker Compose 或 Docker Swarm 部署**
+**4.3 Docker Compose 或 Docker Swarm 部署**
 
 在 docker-compose.yml 中添加
 
