@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  poll:
+    build: .
+    image: iana-poll:latest
+    volumes:
+      - $PUBLISH_DIR:/publish
+
